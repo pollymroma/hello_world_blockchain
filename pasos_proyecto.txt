@@ -1,0 +1,50 @@
+1. Crear carpeta del proyecto.
+2. truffle init para armar estructura. Si truffle no funciona:
+- Clonar repo: https://github.com/trufflesuite/truffle-init-default
+Quedarme solo con las carpetas contracts, migrations y test, y el archivo truffle-confjig.js
+De contracts quedarme solo con Migrations.sol y de migrations solo con 1_initial_migration.js
+Eliminar lo que hay en test.
+3. Crear la carpeta public. Aca va index.html, bundle.js y web3.js. El package.json va fuera de todas las carpetas.
+4. Instalar static-server: https://www.npmjs.com/package/static-server: sincroniza con truffle
+5. En contracts creamos el contrato HelloWorld
+6. Migracion: lo que se deploya dentro de la blockchain. Truffle busca en la carpeta migrations.
+Defino un migration para el contrato hello world.
+7. Abro otra consola, levanto servidor local. Me paro en la carpeta del proyecto.
+truffle compile  -> te genera el build y unos json con metadata
+8. Levanto servidor en Hello-World truffle develop. Crea 10 cuentas con 10 keys.
+Corre en localhost:9545 => http://127.0.0.1:9545
+Copio las palabras mnemonic: joy monitor trash aerobic fever eagle hockey use female crucial people disorder
+9. Configurar metamask con cuenta de Ganache
+Abro metamask:
+- Crea palabras: semilla. Indicamos donde se va a ejecutar. Usamos Ganache local, en localhost.
+- Importar con las palabras: las pego
+- Meto contraseña
+10. Armamos Bundle.
+- Copiamos abi del json del contrato en el build.
+- vA AL BUNDLE.
+- donde esta el truffle develop, sin pararlo corro migrate --reset REVISAR BIEN ESTO SI ALGO FALLA!
+Te da info de los archivos en migrations, queremos contract address
+0x054387F4FC1395EF653089dFA25642Ea137196Bc
+va como otra variable en el bundle
+- agregamos el framework web3 con donde esta corriendo
+- declaro variable con web3 y modulo ethereum
+- ahora uso los metodos del contrato
+11. Interaccion entre componentes html y las funciones del contrato
+12. en la consola donde corri el truffle develop y migration y todo, miro la primer account.
+Es la que me esta tomando metamask.
+Queda corriendo ahi el servidor de blockchain. Ahi esta corriendo el contrato.
+13. En otra consola: corre el servidor local, la pagina html. npm start. (primero un npm install por las dudas)
+Abro la pagina.
+14. Configurar la red: 
+Personalizada. Ganache, http://localhost:9545/, symbol: ETH
+
+
+
+
+
+
+
+
+
+TRUFFLE NO ANDA:
+If you tried all above solutions and still its not working then try to add Path "C:\Users\xxx\AppData\Roaming\npm" in environment variables.
